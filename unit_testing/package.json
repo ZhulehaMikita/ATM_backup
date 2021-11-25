@@ -1,0 +1,28 @@
+{
+  "name": "unit-testing-project",
+  "version": "1.0.0",
+  "description": "unit testing project using mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test"
+  },
+  "keywords": [
+    "mocha",
+    "unit",
+    "testing"
+  ],
+  "author": "Mikita_Zhuleha",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^8.3.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^9.1.3",
+    "mochawesome": "^7.0.1",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "reporter": "html"
+  }
+}
