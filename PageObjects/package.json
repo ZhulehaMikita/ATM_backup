@@ -1,0 +1,16 @@
+{
+  "name": "pageobjects",
+  "version": "1.0.0",
+  "description": "Creating Page Object's structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "protractor": "^7.0.0"
+  }
+}
