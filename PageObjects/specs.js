@@ -1,14 +1,16 @@
 const expect = require("chai").expect;
 const { browser } = require("protractor")
 const BasePage = require('./Pages/BasePage');
+let webDriver = require('selenium-webdriver');
+const Key = webDriver.Key;
 
 describe('Rewriting cases from previous Protractor task according PO models', function () {
     let page = new BasePage();
     
-    beforeEach(function() {
+    beforeEach(async function() {
         browser.waitForAngularEnabled(false);
-        browser.manage().window().maximize();
-        page.open('https://answerconnect.cch.com/app/acr/home/federal');
+        await page.open('https://answerconnect.cch.com/app/acr/home/federal');
+        browser.manage().window().maximize();        
     });
 
     it('Should verify that previously selected tab is highlighted after back button applying', async function () {
@@ -30,7 +32,6 @@ describe('Rewriting cases from previous Protractor task according PO models', fu
         await  page.internationalTab.click();
         await  page.waitForElement(page.internationalTaxTopics);
         await  page.internationalTaxTopics.click();
-        await  browser.waitForAngularEnabled(true);
         await  page.waitForElement(page.internationalTopicsInput);
         await  page.internationalTopicsInput.sendValues('Belgium');
         await  page.waitForElement(page.belgiumLink);
@@ -39,4 +40,28 @@ describe('Rewriting cases from previous Protractor task according PO models', fu
         expect(title).to.equal('Belgium');
     });
 
+    iit('Verify back to top button functionality ', async function(){
+        await page.waitForElement(page.accountingLink);
+        await browser.executeScript('arguments[0].click()', page.accountingLink.element);
+        await page.wait(4000);
+        await browser.executeScript('arguments[0].scrollIntoView()', page.footer.element);
+        await page.backToTopButtonEnabled.click();
+        let button = await page.backToTopButtonEnabled.element.isPresent()
+        expect(button).to.equal(true);
+    });
+    
+    iit('Verify back to top button functionality ', async function(){
+        await page.waitForElement(page.input)
+        await browser.actions()
+        .mouseMove(page.input.element)
+        .mouseDown()
+        .keyDown(Key.SHIFT)
+        .sendKeys('insurance')
+        .keyUp(Key.SHIFT)
+        .mouseUp()
+        .sendKeys(Key.ENTER)
+        .perform();
+        let url = await page.getCurrentUrl();
+        expect(url.includes('INSURANCE')).to.equal(true);
+    })
 });
