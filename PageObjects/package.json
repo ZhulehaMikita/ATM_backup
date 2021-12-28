@@ -4,7 +4,8 @@
   "description": "Creating Page Object's structure",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "pretest": "node ./configs/logs.cleaner.js",
+    "test": "protractor ./configs/protractor.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,10 @@
   },
   "devDependencies": {
     "chromedriver": "^96.0.0",
+    "fs-extra": "^10.0.0",
     "geckodriver": "^2.0.4",
-    "selenium-webdriver": "^4.1.0"
+    "path": "^0.12.7",
+    "selenium-webdriver": "^4.1.0",
+    "winston": "^3.3.3"
   }
 }
