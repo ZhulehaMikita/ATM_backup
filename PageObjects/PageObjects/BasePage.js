@@ -18,7 +18,7 @@ class BasePage {
         this.backToTopButtonEnabled = new Element('css', '[style="display: block;"]', 'Back to top button');
         this.footer = new Element('css', '.wk-footer-container', 'Footer');
         this.secondarySearch = new Element('css', 'input[type="text"]', 'Secondary search field');
-        this.backToTopButtonDisabled = new Element('css', '[style="display: none;"]');
+        this.backToTopButtonDisabled = new Element('css', '.csn-scroll-to-top[style="display: none;"]');
     };
 
     wait(waitInMilliseconds) {

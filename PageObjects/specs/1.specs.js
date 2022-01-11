@@ -5,13 +5,14 @@ const BasePage = require('../PageObjects/BasePage');
 let webDriver = require('selenium-webdriver');
 const Key = webDriver.Key;
 
+
 describe('Rewriting cases from previous Protractor task according PO models', function () {
     let page = new BasePage();
     
     beforeEach(async function() {
         browser.waitForAngularEnabled(false);
         logger.debug('Test starts...')
-        await page.open('https://answerconnect.cch.com/app/acr/home/federal');
+        await page.open(envURL);
         browser.manage().window().maximize();        
     });
 
@@ -38,7 +39,8 @@ describe('Rewriting cases from previous Protractor task according PO models', fu
         await  page.waitForElement(page.internationalTopicsInput);
         await  page.internationalTopicsInput.sendValues('Belgium');
         await  page.waitForElement(page.belgiumLink);
-        await  page.belgiumLink.click();       
+        await  page.belgiumLink.click();
+        await  page.wait(3000);       
         let title = await page.heading.getText();
         expect(title).to.equal('Belgium');
         logger.debug(`Test has been completed successfully`);
@@ -47,7 +49,7 @@ describe('Rewriting cases from previous Protractor task according PO models', fu
     it('Verify back to top button functionality ', async function(){
         await page.waitForElement(page.accountingLink);
         await page.clickWithJS(page.accountingLink);
-        await page.wait(4000);
+        await page.wait(3000);
         await page.scrollToEllementWithJS(page.footer);
         await page.backToTopButtonEnabled.click();
         let button = await page.backToTopButtonEnabled.element.isPresent();
@@ -67,8 +69,9 @@ describe('Rewriting cases from previous Protractor task according PO models', fu
         .sendKeys(Key.ENTER)
         .perform();
         logger.info(`Text in upper case is entered in input field using browser actions`);
+        await page.wait(2000);
         let url = await page.getCurrentUrl();
         expect(url.includes('INSURANCE')).to.equal(true);
-        logger.debug(`Test has been completed successfully`);;
+        logger.debug(`Test has been completed successfully`);
     })
 });

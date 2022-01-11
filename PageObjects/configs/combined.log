@@ -1,5 +1,5 @@
 debug: Test starts...
-info: Browser has opened https://answerconnect.cch.com/app/acr/home/federal
+info: Browser has opened https://answerconnect.cch.com/federal
 info: Browser is waiting for 'Main input'
 info: 'business tax' has been entered into 'Main input'
 info: Browser is waiting for 'Magnifier Icon'
@@ -9,10 +9,10 @@ info: Browser waits 2000 ms
 info: 'International tab on SRL' is clicked
 info: Browser waits 2000 ms
 info: Back button is applied
-info: Browser URL is https://answerconnect.cch.com/results/search/federal?searchId=834951779&page=1&query=business%20tax
+info: Browser URL is https://answerconnect.cch.com/results/search/federal?searchId=842835667&page=1&query=business%20tax
 debug: Test has been completed successfully
 debug: Test starts...
-info: Browser has opened https://answerconnect.cch.com/app/acr/home/federal
+info: Browser has opened https://answerconnect.cch.com/federal
 info: Browser is waiting for 'International Tab'
 info: 'International Tab' is clicked
 info: Browser is waiting for 'International Tax Topics'
@@ -21,19 +21,22 @@ info: Browser is waiting for 'International Topics Input'
 info: 'Belgium' has been entered into 'International Topics Input'
 info: Browser is waiting for 'Belgium link'
 info: 'Belgium link' is clicked
+info: Browser waits 3000 ms
 info: 'Belgium' has been extracted from 'Heading'
 debug: Test has been completed successfully
 debug: Test starts...
-info: Browser has opened https://answerconnect.cch.com/app/acr/home/federal
+info: Browser has opened https://answerconnect.cch.com/federal
 info: Browser is waiting for 'Accounting link'
 info: 'Accounting link' has been clicked
-info: Browser waits 4000 ms
+info: Browser waits 3000 ms
 info: Browser has scrolled to 'Footer'
 info: 'Back to top button' is clicked
 debug: Test has been completed successfully
 debug: Test starts...
-info: Browser has opened https://answerconnect.cch.com/app/acr/home/federal
+info: Browser has opened https://answerconnect.cch.com/federal
 info: Browser is waiting for 'Main input'
 info: Text in upper case is entered in input field using browser actions
+info: Browser waits 2000 ms
 info: Browser URL is https://answerconnect.cch.com/results/search/federal?query=INSURANCE
 debug: Test has been completed successfully
+n completed successfully

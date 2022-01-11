@@ -1,7 +1,13 @@
 // An example configuration file.
+// const yargs = require('yargs').argv;
+const args = require('./args');
+const file = require('./file.json')
+
+global.envURL = file[args.env];
+
 exports.config = {
   directConnect: true,
-  seleniumAddress: 'http://localhost:4444/wd/hub',
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
   // Capabilities to be passed to the webdriver instance.
   capabilities: 
     {
@@ -9,8 +15,9 @@ exports.config = {
       'goog:chromeOptions': {
         w3c: false
       },
-      "maxInstances": 5,
-      "seleniumProtocol": "WebDriver"
+      "seleniumProtocol": "WebDriver",
+      shardTestFiles: args.sharedTestFiles,
+      maxInstances: args.maxInstances,
     },
   // Framework to use. Jasmine is recommended.
   framework: 'mocha',
@@ -25,3 +32,5 @@ exports.config = {
     timeout: 70000
   }
 };
+
+

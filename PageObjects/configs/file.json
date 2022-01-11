@@ -1,0 +1,6 @@
+{
+    "dev": "https://answerconnect-dev.psdidevenvs.com",
+    "qa": "https://answerconnect-qa.psdidevenvs.com/app/acr/home/federal",
+    "stg": "https://answerconnect.stg.cch.com/app/acr/home/federal",
+    "prod": "https://answerconnect.cch.com/federal"
+}
