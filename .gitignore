@@ -4,3 +4,5 @@ unit_testing/coverage
 unit_testing/.nyc_output
 PageObjects/node_modules
 webdriverJS_protractor/node_modules
+BDD/node_modules
+BDD/test/reports

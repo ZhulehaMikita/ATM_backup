@@ -1,0 +1,26 @@
+{
+  "name": "bdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node ./test/utils/delete_reports.js",
+    "test": "protractor ./test/config/protractor_config.js",
+    "postinstall": "webdriver-manager update"
+  },
+  "keywords": [
+    "BDD"
+  ],
+  "author": "Mikita_Zhuleha",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "cucumber": "^7.0.0-rc.0",
+    "cucumber-html-reporter": "^5.5.0",
+    "cucumber-pretty": "^6.0.1",
+    "fs-extra": "^10.0.0",
+    "protractor": "^7.0.0",
+    "protractor-cucumber-framework": "^8.2.11",
+    "yargs": "^17.3.1"
+  }
+}
