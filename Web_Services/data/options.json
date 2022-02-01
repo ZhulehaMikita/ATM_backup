@@ -1,0 +1,9 @@
+{
+    "uri": "https://jsonplaceholder.typicode.com/users",
+    "method": "GET",
+    "headers": {
+        "User-Agent": "Request-Promise"
+    },
+    "resolveWithFullResponse": true,
+    "json": true
+}

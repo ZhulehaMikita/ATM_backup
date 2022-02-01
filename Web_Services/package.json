@@ -1,0 +1,19 @@
+{
+  "name": "web_services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Mikita_Zhuleha",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "yargs": "^17.3.1"
+  }
+}
