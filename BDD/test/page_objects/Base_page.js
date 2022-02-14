@@ -3,7 +3,7 @@ const { browser } = require("protractor");
 class BasePage {
     
     constructor(){
-        this.url = 'https://answerconnect.cch.com';
+        this.url = 'https://answerconnect-qa.psdidevenvs.com';
     };
 
     openPage(){

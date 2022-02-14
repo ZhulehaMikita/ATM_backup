@@ -1,12 +1,21 @@
 const path = require('path');
 const yargs = require('yargs').argv;
 const reporter = require('cucumber-html-reporter');
+const fs = require('fs-extra');
+const reportsPath = path.join(__dirname, '../reports');
+const cucumberJunitConvert = require('cucumber-junit-convert');
 
 const reportOptions = {
     theme: 'bootstrap',
     jsonFile: path.join(__dirname, '../reports/report.json'),
     output: path.join(__dirname, '../reports/cucumber-report.html'),
     reportSuiteAsScenarios: true
+};
+
+const options = {
+    inputJsonFile: path.join(__dirname, '../reports/report.json'),
+    outputXmlFile: path.join(__dirname, '../reports/report.xml'),
+    featureNameAsClassName: true
 };
 
 exports.config = {
@@ -28,7 +37,7 @@ exports.config = {
     ignoreUncaughtExceptions: true,
     cucumberOpts: {
         require: ['../step_definitions/*.js'],
-        format:['json:../reports/report.json'],
+        format:['json:../reports/report.json', '../../node_modules/cucumber-pretty'],
         tags: yargs.tags || '@smoke'
     },
     onPrepare: function () {
@@ -36,6 +45,14 @@ exports.config = {
         return browser.manage().window().setSize(1900, 1000);
     },
     afterLaunch: () => {
-        return reporter.generate(reportOptions);
+         let array = fs.readdirSync(reportsPath);
+         let newArray = require(path.join(__dirname, '../reports/' + array[0]), 'utf-8');
+         for (let i= 1; i<array.length; i++){
+            let content = require(path.join(__dirname, '../reports/' + array[i]));
+            newArray.push(content[0]);
+        };
+        fs.writeFileSync(path.join(__dirname, '../reports/report.json'), JSON.stringify(newArray, null, ' '));
+        reporter.generate(reportOptions);
+        cucumberJunitConvert.convert(options);
     }
 };
