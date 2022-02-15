@@ -1,4 +1,3 @@
-
 class Element {
 
     constructor(type, selector) {
