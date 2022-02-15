@@ -5,6 +5,8 @@ const request = require('request-promise-native');
 
 describe('Get method verification', () => {
 
+    let response;
+
     before(async () => {
         response = await request(options);
     });
@@ -18,11 +20,7 @@ describe('Get method verification', () => {
     });
 
     it('Verifying amount of users', () => {
-        let count = 0;
-        for(let element of response.body){
-            if(element.id) count ++
-        };
-        expect(count).to.eql(10);
+        expect(response.body.length).to.eql(10);
     });
     
 });
