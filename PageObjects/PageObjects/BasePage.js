@@ -5,22 +5,6 @@ const EC = ExpectedConditions;
 
 class BasePage {
 
-    constructor() {
-        this.internationalTab = new Element('css', '[data-e2e-element-id=internationalTax]', 'International Tab');
-        this.internationalTaxTopics = new Element('css', '[data-e2e-element-id=intTaxTopics]', 'International Tax Topics');
-        this.internationalTopicsInput = new Element('css', 'input.topics-search-input', 'International Topics Input');
-        this.belgiumLink = new Element('text', 'Belgium', 'Belgium link');
-        this.input = new Element('css', 'input[type=search]', 'Main input');
-        this.magnifierIcon = new Element('css', 'span.wk-icon-search', 'Magnifier Icon');
-        this.internationalTabOnSearch = new Element('text', 'International', 'International tab on SRL');
-        this.heading = new Element('css', 'h1.e2e-header-title', 'Heading');
-        this.accountingLink = new Element('text', 'Accounting for Uncertain Tax Positions', 'Accounting link');
-        this.backToTopButtonEnabled = new Element('css', '[style="display: block;"]', 'Back to top button');
-        this.footer = new Element('css', '.wk-footer-container', 'Footer');
-        this.secondarySearch = new Element('css', 'input[type="text"]', 'Secondary search field');
-        this.backToTopButtonDisabled = new Element('css', '.csn-scroll-to-top[style="display: none;"]');
-    };
-
     wait(waitInMilliseconds) {
         logger.info(`Browser waits ${waitInMilliseconds} ms`);
         return browser.sleep(waitInMilliseconds);
