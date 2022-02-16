@@ -3,6 +3,7 @@ const { browser } = require("protractor")
 const homepage = require('./page_objects/Homepage');
 const interTopicsPage = require('./page_objects/InterTopicsPage');
 const srl = require('./page_objects/SRL');
+
 describe('Rewriting cases from previous Protractor task according PO models', function () {
  
     
