@@ -11,6 +11,7 @@ class Homepage extends BasePage {
         this['All'] = element(by.css('[data-e2e-element-id=all]'));
         this['Federal Tax Widget'] = element(by.css('[data-e2e-widget-id=federalTax]'));
         this['All Federal Tax'] = element(by.css('[data-e2e-element-id=allFederalTax]'));
+        this['All CCH Tax Briefings'] = element(by.cssContainingText('.section-card__list-item-title-text', 'All CCH Tax Briefings'));
     }
 }
 

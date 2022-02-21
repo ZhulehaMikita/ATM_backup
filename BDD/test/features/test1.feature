@@ -30,3 +30,14 @@ Scenario: Verificarion of 'All Federal Tax' link
     And User sees "Federal Tax page title"
     And User sees "Income Taxes link"
     And User sees "Highlighted sections" 
+
+@debug
+Scenario: CCH Tax Briefings link verification 
+    Given User is on "Homepage" page
+    Then "Homepage" should be opened
+    And User is located on "Federal Tab" tab
+    And User sees "Federal Tax Widget"
+
+    When User clicks on "All CCH Tax Briefings"
+    Then "Tax News page" should be opened
+    And User sees "Tax News header"
